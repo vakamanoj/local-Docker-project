@@ -1,0 +1,20 @@
+
+
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis:alpine"
+  web:
+    image: "httpd"
+    ports:
+      - "8080:80"
+  proxy:
+    image: "nginx"
+    ports:
+      - "9091:80"
+
+
